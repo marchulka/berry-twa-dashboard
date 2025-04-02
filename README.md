@@ -1,12 +1,32 @@
-# Introduction
+# Berry Dashboard TWA
 
-This is material design template created based on materially structure
+Berry Dashboard template integrated with Telegram Web App (TWA).
 
-# Getting Started
+## Features
 
-1. Installation process
-    - run 'npm install / yarn'
-    - start dev server run 'npm run start / yarn start'
-2. Deployment process
-    - Goto full-version directory and open package.json. Update homepage URL to the production URL
-    - Goto full-version directory and run 'npm run build / yarn build'
+- Material UI Dashboard
+- Telegram Web App Integration
+- Responsive Design
+- Dark/Light Theme
+- Real-time Updates
+
+## Development
+
+```bash
+# Install dependencies
+yarn install
+
+# Start development server
+yarn dev
+
+# Build for production
+yarn build
+```
+
+## Deployment
+
+The project is configured for deployment on Railway using Docker.
+
+## License
+
+This project is based on Berry Dashboard template.
