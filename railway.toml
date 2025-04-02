@@ -1,0 +1,17 @@
+[build]
+builder = "nixpacks"
+buildCommand = "yarn build"
+
+[deploy]
+startCommand = "yarn preview"
+healthcheckPath = "/"
+healthcheckTimeout = 100
+restartPolicyType = "on_failure"
+
+[service]
+name = "berry-twa-dashboard"
+region = "us-west"
+port = 80
+
+[[service.domains]]
+domain = "berry-twa-dashboard-production.up.railway.app" 
