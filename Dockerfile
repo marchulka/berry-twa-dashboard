@@ -3,6 +3,9 @@ FROM node:18-alpine as build
 
 WORKDIR /app
 
+# Enable Corepack and install correct Yarn version
+RUN corepack enable && corepack prepare yarn@4.6.0 --activate
+
 # Copy package files
 COPY package*.json ./
 COPY yarn.lock ./
