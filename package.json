@@ -90,7 +90,11 @@
     "immutable": "^4.3.5",
     "jquery": "^3.7.1",
     "quill-delta": "^5.1.0",
-    "stylis": "^4.3.1"
+    "stylis": "^4.3.1",
+    "@mui/system": "^6.1.9",
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.2.61",
+    "typescript": "^5.3.3"
   },
   "scripts": {
     "dev": "vite",
