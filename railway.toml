@@ -1,6 +1,6 @@
 [build]
 builder = "nixpacks"
-buildCommand = "yarn install --no-cache && yarn build"
+buildCommand = "yarn install && yarn build"
 
 [deploy]
 startCommand = "yarn serve"
@@ -10,18 +10,18 @@ restartPolicyType = "ON_FAILURE"
 node-version = "20.11.0"
 yarn-version = "4.6.0"
 
-# Временно отключаем мониторинг для стабильного деплоя
-#[monitoring]
-#enabled = true
-#metrics = [
-#    "cpu",
-#    "memory",
-#    "disk",
-#    "response-time"
-#]
-#alerts = [
-#    { type = "cpu", threshold = 80, duration = "5m" },
-#    { type = "memory", threshold = 80, duration = "5m" },
-#    { type = "disk", threshold = 80, duration = "5m" },
-#    { type = "response-time", threshold = 1000, duration = "5m" }
-#] 
+# Включаем мониторинг согласно документации Berry
+[monitoring]
+enabled = true
+metrics = [
+    "cpu",
+    "memory",
+    "disk",
+    "response-time"
+]
+alerts = [
+    { type = "cpu", threshold = 80, duration = "5m" },
+    { type = "memory", threshold = 80, duration = "5m" },
+    { type = "disk", threshold = 80, duration = "5m" },
+    { type = "response-time", threshold = 1000, duration = "5m" }
+] 
