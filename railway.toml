@@ -1,13 +1,18 @@
 [build]
 builder = "nixpacks"
-buildCommand = "yarn install && yarn build"
+buildCommand = """
+  yarn cache clean
+  yarn install --frozen-lockfile
+  yarn build
+  yarn optimize
+"""
 
 [deploy]
 startCommand = "yarn serve"
 restartPolicyType = "ON_FAILURE"
 
 [nixpacks]
-node-version = "20.11.0"
+node-version = "18.17.0"  # LTS версия, рекомендованная Berry
 yarn-version = "4.6.0"
 
 # Включаем мониторинг согласно документации Berry
@@ -17,11 +22,17 @@ metrics = [
     "cpu",
     "memory",
     "disk",
-    "response-time"
+    "response-time",
+    "react-renders",
+    "redux-actions",
+    "api-calls",
+    "error-boundary-catches",
+    "route-changes"
 ]
 alerts = [
     { type = "cpu", threshold = 80, duration = "5m" },
     { type = "memory", threshold = 80, duration = "5m" },
     { type = "disk", threshold = 80, duration = "5m" },
-    { type = "response-time", threshold = 1000, duration = "5m" }
+    { type = "response-time", threshold = 1000, duration = "5m" },
+    { type = "error-rate", threshold = 1, duration = "5m" }
 ] 
