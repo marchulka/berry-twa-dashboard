@@ -3,7 +3,7 @@ builder = "nixpacks"
 buildCommand = "yarn install && yarn build"
 
 [deploy]
-startCommand = "yarn preview"
+startCommand = "yarn preview --host 0.0.0.0 --port $PORT"
 restartPolicyType = "ON_FAILURE"
 
 [nixpacks]
