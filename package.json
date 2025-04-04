@@ -101,7 +101,8 @@
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "serve": "serve dist -p $PORT"
+    "serve": "serve dist -p $PORT",
+    "optimize": "vite optimize"
   },
   "eslintConfig": {
     "extends": [

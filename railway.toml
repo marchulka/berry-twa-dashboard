@@ -4,7 +4,6 @@ buildCommand = """
   yarn cache clean
   yarn install --frozen-lockfile
   yarn build
-  yarn optimize
 """
 
 [deploy]
