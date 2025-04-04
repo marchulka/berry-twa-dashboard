@@ -1,6 +1,6 @@
 [build]
 builder = "nixpacks"
-buildCommand = "yarn cache clean && rm -rf node_modules && yarn install --no-immutable && yarn build"
+buildCommand = "yarn install --immutable && yarn build"
 
 [deploy]
 startCommand = "yarn start"
